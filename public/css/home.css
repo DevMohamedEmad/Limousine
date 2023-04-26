@@ -1,0 +1,258 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #2196f3;
+  --yellow-color: #e0b145;
+  --main-transition: 0.3s;
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  --section-background: #ececec;
+  --primary: #1c2931;
+  --secondary: #9cbbcc;
+  --body-color: rgba(51, 51, 51, .9);
+  --text-color: #fefefe;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+/*  Btn */
+.btn-default.btn4,
+.btn-default.btn5 {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-family: 'Open Sans Condensed';
+  font-size: 10px;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  background: #1c2931;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-default.btn5 {
+  padding: 5px 10px;
+}
+
+.btn-default.btn4 {
+  padding: 0 40px 0 20px;
+}
+
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.btn-default.btn4:after {
+  content: "\f105";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+  color: #fff;
+  width: 30px;
+  text-align: center;
+}
+
+.btn-default.btn4:before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #9cbbcc;
+  position: absolute;
+  right: -10px;
+  top: 0;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transform: skewX(-25deg);
+  -ms-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+
+/* Start Header */
+.header {
+  background-color: var(--primary);
+
+  position: relative;
+  -webkit-box-shadow: 0 0 10px #ddd;
+  -moz-box-shadow: 0 0 10px #ddd;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.header .logo {
+  color: var(--yellow-color);
+  font-size: 26px;
+  font-weight: bold;
+  height: 72px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: 'Satisfy', cursive;
+  align-items: center;
+  left: -120px;
+}
+
+@media (max-width: 767px) {
+  .header .logo {
+    width: 100%;
+    height: 50px;
+  }
+}
+
+.header .main-nav {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .header .main-nav {
+    margin: auto;
+  }
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+.dropdown,
+.btn {
+  color: white;
+  padding: 5px;
+  display: block;
+  font-size: 15px;
+}
+
+.btn:hover {
+  color: var(--yellow-color);
+}
+
+.dropdown-item {
+  color: var(--yellow-color);
+  background-color: #1c2931;
+}
+
+.landing {
+  width: 100%;
+  height: 100%;
+}
+
+/* End Header */
+.landing::before {
+  content: "";
+  background: url(../images/landing2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -2;
+  opacity: .9;
+}
+
+.landing .discribtion {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--yellow-color);
+}
+
+.landing h2 {
+  padding-top: 15%;
+  font-weight: bold;
+  margin: auto auto;
+}
+
+.landing .btn {
+  background-color: #e0b145;
+  color: black;
+  width: 25%;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px auto;
+  border-radius: 20px;
+}
+
+.landing .btn:hover {
+  background-color: transparent;
+  color: var(--yellow-color);
+  border: 3px solid var(--yellow-color);
+}

@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('front/welcome');
+})->name('Bright Empire');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/fleets',[App\Http\Controllers\CarController::class, 'index'])->name('fleets');
+Route::get('/fleets/create',[App\Http\Controllers\CarController::class, 'create'])->name('fleet.create');
