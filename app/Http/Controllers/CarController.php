@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
+use App\Models\Carfeatures;
+use App\Models\Carphoto;
 
 class CarController extends Controller
 {
     public function index()
     {
-        return view('front.fleets');
+        return view('fleets.index'  , ['cars' => Car::all()]);
     }
 
     /**
@@ -18,7 +20,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return View('fleets.create');
     }
 
     /**
@@ -26,15 +28,33 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $request)
     {
-        //
+        $car = new Car() ;
+        $car->name = $request->name;
+        $car->description=$request->describtion;
+        if ($car->save()) {
+            for ($i = 0; $i < count($request->feature); $i++) {
+                if($request->feature[$i] != null){
+                    $features = new Carfeatures();
+                    $features->car_id  =$car->id;
+                    $features->feature =$request->feature[$i];
+                    $features->save(); 
+                }
+            }
+            for ($i = 0; $i < count($request->photos); $i++) {
+                $image = $request->photos[$i];
+                $new_image = time() . $image->getClientOriginalName();
+                $image->move('images/cars/', $new_image);
+                $carPhoto= new Carphoto();
+                $carPhoto->car_id = $car->id;
+                $carPhoto->photo = 'images/cars/' . $new_image;
+                $carPhoto->save();
+            }
+        }
+        return redirect('fleets');
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Car $car)
     {
-        //
+        return View('fleets.show' , ['car' =>$car]);
     }
 
     /**
@@ -53,11 +73,11 @@ class CarController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Car $car)
     {
         //
+    }
+    public function fleets(){
+        return View('front.fleets' , ['cars' => Car::all()]);
     }
 }
