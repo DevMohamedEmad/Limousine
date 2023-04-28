@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
 use App\Models\Carfeatures;
 use App\Models\Carphoto;
+use App\Models\Category;
 
 class CarController extends Controller
 {
@@ -20,7 +21,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        return View('fleets.create');
+        return View('fleets.create' , ['categories' => Category::all()]);
     }
 
     /**
@@ -30,6 +31,7 @@ class CarController extends Controller
     {
         $car = new Car() ;
         $car->name = $request->name;
+        $car->category_id = $request->category;
         $car->description=$request->describtion;
         if ($car->save()) {
             for ($i = 0; $i < count($request->feature); $i++) {
@@ -78,6 +80,16 @@ class CarController extends Controller
         //
     }
     public function fleets(){
-        return View('front.fleets' , ['cars' => Car::all()]);
+        return View('front.fleets' , ['cars' => Car::all() , 'categories' => Category::all()]);
+    }
+    public function category_filter($id){
+        if($id == 0){
+            return View('front.fleets' , ['cars' => Car::all() , 'categories' => Category::all()]);
+        }
+        else{
+            $cars = Car::where('category_id' , $id)->get();
+            return View('front.fleets' , ['cars' =>Car::where('category_id' , $id)->get() , 'categories' => Category::all() ]);
+        }
+
     }
 }

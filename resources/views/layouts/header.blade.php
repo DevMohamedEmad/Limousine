@@ -61,21 +61,7 @@ $cars = Car::all()
           </div>
         </li>
         
-        <li> 
-          <div class="dropdown">
-           <button
-              class="btn dropdown-toggle bg-transparent"
-              type="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-           >
-             Reservation
-           </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">resercva</a></li>
-            </ul>
-          </div>
-        </li>
+       
         <li> 
           <div class="dropdown">
            <button
@@ -99,7 +85,7 @@ $cars = Car::all()
               data-mdb-toggle="dropdown"
               aria-expanded="false"
            >
-             Reservation
+             About Us
            </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -109,23 +95,23 @@ $cars = Car::all()
         <li> 
           <div class="dropdown">
            <button
-              class="btn dropdown-toggle bg-transparent"
+              class="btn bg-transparent"
               type="button"
               data-mdb-toggle="dropdown"
               aria-expanded="false"
            >
-             Reservation
+           <a href="{{ route('contact') }}" style="color: white">Contact Us</a>
+             
            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-            </ul>
+            
           </div>
         </li>
       </ul>
       @guest
       @if (Route::has('login'))
           <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+              <a class="nav-link" style="color:white; " href="{{ route('login') }}"> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+
           </li>
       @endif
   @else
@@ -143,6 +129,12 @@ $cars = Car::all()
               <a class="dropdown-item" href="{{ route('fleets') }}">
                   {{ __('Fleets') }}
               </a>
+              <a class="dropdown-item" href="{{ route('fleets') }}">
+                {{ __('service') }}
+            </a>
+            <a class="dropdown-item" href="{{ route('contact.show') }}">
+              {{ __('Contact') }}
+          </a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
               </form>
@@ -156,6 +148,77 @@ $cars = Car::all()
    </div>
   <!-- End Header -->
     @yield('content')
+    <footer class="pt-2">
+      <div class="container-fluid pt-5">
+        <div class="container">
+          <div class="row">
+            <!-- start -->
+            <div class="col-md-7 col-12 ">
+              <div class="">
+                <h1 class="logo-font">Bright <span style="color: white">Empire</span> </h1>
+                <p class="mt-2" style="color: white">
+                  Whatever your transportation needs, Bright Empire limousine stands ready with reliable, professional chauffeured ground transportation services for any occasion. Bright Empire limousine fleet covers all your executive and leisure ground transportation needs in NYC , and the TRI state area . That makes us ideal for all your travel needs. We feature an elegant fleet of late model sedans, SUVs, Mercedes Sprinter vans, limousines, corporate black limos, super stretch SUV party limos and party buses, and our professional chauffeurs are courteous and highly experienced. all our services will exceed your highest expectations.
+                </p>
+              </div>
+            </div>
+            <!-- end -->
+            <!-- start -->
+            <div class="col-md-3  px-3">
+              <div class="footer_list">
+                <h5>OUR SERVICES</h5>
+                <ul class="footer_down-list mt-2 " style="color: white">
+                  <li> <a href=""style="color: white">Corporate</a></li>
+                  <li> <a href=""style="color: white">Transportation</a></li>
+                  <li><a href="" style="color: white">Airport</a> </li>
+                  <li> <a href="" style="color: white">Transportation</a></li>
+                  <li> <a href="" style="color: white">Limo Service</a></li>
+                  <li><a href=""style="color: white" >Point to Point Service</a></li>
+                  <li> <a href="" style="color: white">Party Limousine</a></li>
+                  <li><a href=""style="color: white">Private Transfer</a> </li>
+                </ul>
+              </div>
+            </div><!-- end -->
+            <!-- start -->
+            <div class="col-md-2 px-3 ">
+              <div class="footer_list">
+                <h5>FLEET</h5>
+                <ul class="footer_down-list mt-2">
+                  <li> <a href="" style="color: white">Luxury Sedan</a></li>
+                  <li> <a href="" style="color: white">Preemium Sedan</a></li>
+                  <li><a href="" style="color: white">Mini SUV</a> </li>
+                  <li> <a href="" style="color: white">Luxury SUV</a></li>
+                  <li> <a href="" style="color: white">Premium SUV</a></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- end -->
+          </div>
+        </div>
+      </div>
+      <!-- down footer -->
+      <div class="container-fluid  footer_down">
+        <hr style="background:white">
+        <div class="container">
+          <div class="px-sm-3 py-2">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-md-8 col-12 p-1">
+                <span class=" ">©Since We Are Started, All Rights Reserved.</span>
+              </div>
+              <div class="col-md-4 col-12 ">
+                <ul class="footer_down-list d-flex justify-content-between p-1">
+                  <li><a href="https://www.facebook.com/brightempirelimo"> <i class="fa-brands fa-facebook fs-3"> </i></a></li>
+                  <li><a href="https://twitter.com/BrightEmpirenyc"> <i class="fa-brands fa-twitter fs-3"></i> </a></li>
+                  <li><a href="https://www.instagram.com/brightempirelimo/"> <i class="fa-brands fa-instagram fs-3"></i> </a></li>
+                  <li><a href="https://wa.me/+1 646-750-7006"> <i class="fa-brands fa-whatsapp fs-3"></i> </a></li>
+                  <li><a href=""> <i class="fa-brands fa-pinterest fs-3"></i> </a></li>
+                  <li><a href=""> <i class="fa-brands fa-reddit fs-3"></i> </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 </body>

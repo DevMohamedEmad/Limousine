@@ -1,5 +1,4 @@
 @extends('layouts.index')
-
 @section('style')
 {{ asset('css/style.css') }}
 @endsection

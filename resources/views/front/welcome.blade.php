@@ -30,8 +30,6 @@
     <h6 class="text">
       Welcome to Bright Empire United Limo, your premier luxury car service provider in New York City. We specialize in Bright Empire limousine services, offering a wide range of options to meet all your transportation needs, from corporate travel to wedding transportation and beyond.
       Our dedicated chauffeurs are available 26 class="text"/7 to provide exceptional service with a smile. With us, you can expect nothing but the best in customer satisfaction. Choose us for all your airport transportation needs, with ample space for luggage and accommodating multiple passengers.
-      We take pride in going above and beyond to ensure your experience with us is unparalleled.
-      Contact us today to book your next reservation and experience the epitome of luxury travel in the Big Apple.
     </h6>
    </div>
    <div class="cards container">

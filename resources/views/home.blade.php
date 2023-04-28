@@ -1,11 +1,9 @@
 @extends('layouts.header')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1>Dashboard</h1>
-        </div>
+          <img src="{{ asset('images/lan3.jpg') }}" alt="" srcset="">
     </div>
 </div>
 @endsection

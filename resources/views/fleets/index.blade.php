@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layouts.header')
 @section('content')
 
 <div class="jumbotron container p-3">
