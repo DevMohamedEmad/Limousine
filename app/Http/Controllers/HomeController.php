@@ -24,13 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('dashboard.index');
     }
     public function contact(){
         return view('front.contact');
     }
     public function show_contact(){
-        return view('contact.index' , ['contacts' => Contact::all()]);
+        return view('dashboard.contact_us.index' , ['contacts' => Contact::all()]);
     }
     public function contact_store(Request $request){
       $contact = new Contact();

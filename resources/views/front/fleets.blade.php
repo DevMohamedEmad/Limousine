@@ -30,11 +30,9 @@
               <li><i class="fa-solid fa-person-walking-luggage me-2"></i><span>{{ $car->features[1]->feature }}</span> </li>
               <li> <i class="fa-solid fa-car-side me-2"></i><span>{{ $car->features[2]->feature }}</span> </li>
               <li> <i class="fa-solid fa-car me-2"></i><span>{{ $car->features[3]->feature }}</span> </li>
-
             </ul>
             <div class="text-center">
-              <div class="link"><a href="details.html" class="btn-default btn4"><span>READ MORE</span></a></div>
-
+              <div class="link"><a href="{{ route('fleet.show',$car->id) }}" class="btn-default btn4"><span>READ MORE</span></a></div>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 @extends('layouts.header')
 @section('content')
-<button class="btn btn-btn">test</button>
 <!-- contact us -->
 <section class="page-section contact dark">
   <div class="container p-1">

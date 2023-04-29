@@ -8,12 +8,13 @@ use App\Models\Car;
 use App\Models\Carfeatures;
 use App\Models\Carphoto;
 use App\Models\Category;
+use Illuminate\Http\Client\Request;
 
 class CarController extends Controller
 {
     public function index()
     {
-        return view('fleets.index'  , ['cars' => Car::all()]);
+        return view('dashboard.fleets.index'  , ['cars' => Car::all()]);
     }
 
     /**
@@ -21,7 +22,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        return View('fleets.create' , ['categories' => Category::all()]);
+        return View('dashboard.fleets.create' , ['categories' => Category::all()]);
     }
 
     /**
@@ -32,7 +33,7 @@ class CarController extends Controller
         $car = new Car() ;
         $car->name = $request->name;
         $car->category_id = $request->category;
-        $car->description=$request->describtion;
+        $car->description=$request->description;
         if ($car->save()) {
             for ($i = 0; $i < count($request->feature); $i++) {
                 if($request->feature[$i] != null){
@@ -64,20 +65,14 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        //
+        return view('dashboard.fleets.edit' , ['car' => $car , 'categories' =>Category::all()]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateCarRequest $request, Car $car)
-    {
-        //
-    }
 
     public function destroy(Car $car)
     {
-        //
+        $car->delete();
+        return redirect()->back();
     }
     public function fleets(){
         return View('front.fleets' , ['cars' => Car::all() , 'categories' => Category::all()]);

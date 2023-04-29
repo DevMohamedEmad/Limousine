@@ -25,6 +25,31 @@ $cars = Car::all()
   </head>
   <body>
    <!-- Start Header -->
+   <div class="nav_top contaier-fluid">
+    <div class="container ">
+        <div class="row pt-3">
+            <div class="col-lg-6 ">
+                <div class="nav_top-info d-flex justify-content-start row">
+                    <!-- email -->
+                    <a class="col-md-7 col-8" href="mailto:info@brightempirelimonyc.com"><i class="fa fa-envelope"></i> <span>info@brightempirelimonyc.com</span></a>
+                    <!-- phone -->
+                    <a class="col-md-5 col-4 " href="tel:+1 646-750-7006" class=""> <i class="fa fa-phone"></i> <span>+1 646-750-7006</span> </a>
+                </div>
+            </div>
+            <div class="col-lg-4 nav_top-media  text-center ">
+                <div>
+                    <a href="https://www.facebook.com/brightempirelimo"> <i class="fa-brands fa-facebook fs-3"> </i></a>
+                    <a class="mx-3" href="https://www.instagram.com/brightempirelimo/"> <i class="fa-brands fa-instagram fs-3"></i> </a>
+                    <a href="https://wa.me/+1 646-750-7006"> <i class="fa-brands fa-whatsapp fs-3"></i> </a>
+                </div>
+            </div>
+            <div class="col-lg-2 text-end">
+                <a href="{{ route('login') }}"> <i style="color:#d7b65d" class="fas fa-sign-in-alt"></i> <span></span></a>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
    <div class="header" id="header">
     <div class="container">
       <img src="{{ asset('images/logo.png') }}" alt="" srcset="" id="logo">  
@@ -107,43 +132,7 @@ $cars = Car::all()
           </div>
         </li>
       </ul>
-      @guest
-      @if (Route::has('login'))
-          <li class="nav-item">
-              <a class="nav-link" style="color:white; " href="{{ route('login') }}"> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-
-          </li>
-      @endif
-  @else
-      <li class="nav-item dropdown">
-          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-              {{ Auth::user()->name }}
-          </a>
-
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('logout') }}"
-                 onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();">
-                  {{ __('Logout') }}
-              </a>
-              <a class="dropdown-item" href="{{ route('fleets') }}">
-                  {{ __('Fleets') }}
-              </a>
-              <a class="dropdown-item" href="{{ route('fleets') }}">
-                {{ __('service') }}
-            </a>
-            <a class="dropdown-item" href="{{ route('contact.show') }}">
-              {{ __('Contact') }}
-          </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  @csrf
-              </form>
-          </div>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        
-          </div>
-      </li>
-  @endguest
+     
     </div>
    </div>
   <!-- End Header -->
