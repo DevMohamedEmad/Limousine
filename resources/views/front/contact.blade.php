@@ -1,7 +1,7 @@
-@extends('layouts.header')
+@extends('layouts.master')
 @section('content')
 <!-- contact us -->
-<section class="page-section contact dark">
+<section class="page-section contact dark mt">
   <div class="container p-1">
     <!-- Get in touch -->
     <h2 class="section-title wow fadeInDown text-center d-flex flex-column" data-wow-offset="200" data-wow-delay="100ms">

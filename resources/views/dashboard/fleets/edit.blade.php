@@ -77,12 +77,7 @@
     <label  class="form-label">Sixth Feature</label>
           <input type="text" class="form-control" name="feature[]"  placeholder="Enter Sixth Feature"  name="feature[]"> 
     </div>
-    
-    
-    
-    
-    
-    
+
     <div class="col-md-12 mt-2">
     <button type="submit" class="btn btn-primary float-end ">Save</button>
     </div>

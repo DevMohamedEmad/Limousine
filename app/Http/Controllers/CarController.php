@@ -35,14 +35,6 @@ class CarController extends Controller
         $car->category_id = $request->category;
         $car->description=$request->description;
         if ($car->save()) {
-            for ($i = 0; $i < count($request->feature); $i++) {
-                if($request->feature[$i] != null){
-                    $features = new Carfeatures();
-                    $features->car_id  =$car->id;
-                    $features->feature =$request->feature[$i];
-                    $features->save(); 
-                }
-            }
             for ($i = 0; $i < count($request->photos); $i++) {
                 $image = $request->photos[$i];
                 $new_image = time() . $image->getClientOriginalName();
@@ -67,8 +59,6 @@ class CarController extends Controller
     {
         return view('dashboard.fleets.edit' , ['car' => $car , 'categories' =>Category::all()]);
     }
-
-
     public function destroy(Car $car)
     {
         $car->delete();
@@ -77,14 +67,5 @@ class CarController extends Controller
     public function fleets(){
         return View('front.fleets' , ['cars' => Car::all() , 'categories' => Category::all()]);
     }
-    public function category_filter($id){
-        if($id == 0){
-            return View('front.fleets' , ['cars' => Car::all() , 'categories' => Category::all()]);
-        }
-        else{
-            $cars = Car::where('category_id' , $id)->get();
-            return View('front.fleets' , ['cars' =>Car::where('category_id' , $id)->get() , 'categories' => Category::all() ]);
-        }
-
-    }
+   
 }

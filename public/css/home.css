@@ -176,7 +176,7 @@ ul {
 
 .landing .discribtion::before {
   content: "";
-  background: url(../images/lan6.jpg);
+  background: url(../images/nyc.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

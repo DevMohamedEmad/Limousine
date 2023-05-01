@@ -21,7 +21,6 @@
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Namber Of Passangers</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
-                          <!-- <th class="text-secondary opacity-7"></th> -->
                         </tr>
                       </thead>
                       <tbody>
@@ -36,11 +35,11 @@
     
                           <td class="align-middle text-center">
                            
-                                <img src="{{asset($car->photos[1]->photo) }}" class="avatar avatar-sm  border-radius-lg" alt="user1">
+                                <img src="{{asset($car->photos[0]->photo) }}" class="avatar avatar-sm  border-radius-lg" alt="user1">
                             
                           </td>
                           <td class="align-middle text-center">
-                            <span class="text-secondary text-xs font-weight-bold">{{$car->features[1]->feature}}</span>
+                            <span class="text-secondary text-xs font-weight-bold">{{$car->description}}</span>
                       </td>
                           <td class="align-middle text-center text-center d-flex justify-content-center">
                             <form action="{{ route('fleet.delete' , $car->id) }}" method="post" class="me-2">
